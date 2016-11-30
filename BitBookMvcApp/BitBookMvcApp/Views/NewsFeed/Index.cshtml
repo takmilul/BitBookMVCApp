@@ -1,0 +1,55 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <h1>Welcome</h1>
+    <div class="navbar navbar-inverse navbar-fixed-top" id="nav">
+
+        <!-- search option-->
+        @using (Html.BeginForm("Search", "NewsFeed"))
+        {
+            <div class="col-md-8" id="seachBox">
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="search" name="searchName"/>
+                </div>
+                <input type="hidden" value="Index" id="layout" name="layout"/>
+                <div class="col-md-4" id="searchButton">
+                    <input type="submit" class="btn btn-sm" value="ok"/>
+                </div>
+
+
+            </div>
+            <!-- end of seach Option -->
+
+        }
+
+        <div class="col-md-6" id="profile">
+            <div id="myProfile">
+                     
+                    <!--  drop down menu for -->
+                    <div class="dropdown col-md-2">
+                        <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li style="color: black; text-decoration: none"><a href="@Url.Action("Logout", "Login")">Logout</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </div><!-- end of navbarHeader-->
+    </div>
+
+    <a href="@Url.Action("About","Profile")">About</a>
+</div>
+</body>
+</html>

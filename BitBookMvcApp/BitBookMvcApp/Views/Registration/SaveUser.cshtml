@@ -1,0 +1,116 @@
+﻿@model BitBookMVCApp.ViewModels.Registration.RegistrationAndLogin
+@{
+    Layout = null;
+    string message = ViewBag.Message;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SaveUser</title>
+</head>
+<body>
+    @if ((string) Session["Message"] != null)
+{
+    <h5>@((string) Session["Message"])</h5>
+    }
+    <div id="login">
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new {id = "LoginForm"}))
+    {
+        <p>
+            @Html.LabelFor(a => a.Login.EmailForLogin)
+            @Html.TextBoxFor(a => a.Login.EmailForLogin)
+            @Html.ValidationMessageFor(a => a.Login.EmailForLogin)&nbsp; &nbsp;
+
+            @Html.LabelFor(a => a.Login.PasswordForLogin)
+            @Html.PasswordFor(a => a.Login.PasswordForLogin)
+            @Html.ValidationMessageFor(a => a.Login.PasswordForLogin)&nbsp; &nbsp;
+
+            <input type="submit" class="btn-default" value="Login">
+        </p>
+        }
+    </div>
+
+    <div>
+        @if (message != null)
+    {
+        <h3 class="message">@message</h3>
+        }
+
+    @using (Html.BeginForm("SaveUser", "Registration", FormMethod.Post, new {id = "SignupForm"}))
+    {
+        <fieldset>
+            <legend>Signup:</legend>
+            <table class="signupTable">
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.FirstName)</td>
+                    <td>@Html.TextBoxFor(x => x.Registration.FirstName, new {id = "firstName", placeholder = "First Name"})</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.FirstName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.LastName)</td>
+                    <td>@Html.TextBoxFor(x => x.Registration.LastName, new {id = "lastName", placeholder = "Last Name"})</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.LastName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.Email)</td>
+                    <td>@Html.TextBoxFor(x => x.Registration.Email, new {id = "email", placeholder = "Type Email"})</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.Password)</td>
+                    <td>@Html.PasswordFor(x => x.Registration.Password, new {id = "password", placeholder = "Type Password"})</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.Password)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.ConfirmPassword)</td>
+                    <td>@Html.PasswordFor(x => x.Registration.ConfirmPassword, new {id = "password", placeholder = "Re-Type Password"})</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.ConfirmPassword)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(r => r.Registration.DateOfBirth)</td>
+                    <td>@Html.DropDownList("day", new SelectList(ViewBag.Days, "Value", "Text"), new {@class = "dropdown"})
+                        @Html.DropDownList("Month", new SelectList(ViewBag.Months, "Value", "Text"))
+                        @Html.DropDownList("year", new SelectList(ViewBag.Years, "Value", "Text"))
+                        <p style="color: red">
+                            @Html.ValidationMessageFor(a => a.Registration.DateOfBirth)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(x => x.Registration.Gender)</td>
+                    <td>@Html.RadioButtonFor(x => x.Registration.Gender, "Male", new {id = "male"})Male</td>
+                    <td>@Html.RadioButtonFor(x => x.Registration.Gender, "Female", new {id = "female"})Female</td>
+                    <td>@Html.ValidationMessageFor(x => x.Registration.Gender)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="loginButton" class="signupButton" type="submit" name="Signup" value="Signup" /></td>
+                </tr>
+            </table>
+        </fieldset>
+        }
+    </div>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+    <script type="text/javascript">
+        $(document)
+            .ready(function (e) {
+                $(function () {
+                    $('.signupButton')
+                        .click(function () {
+                            $('.signupTable input[type="text"]').val('');
+                        });
+                });
+            });
+
+
+    </script>
+</body>
+</html>

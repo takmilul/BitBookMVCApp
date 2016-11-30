@@ -1,0 +1,83 @@
+﻿@using BitBookMVCApp.Models
+
+@{
+    Layout = null;
+    Profile profile = ViewBag.Profile;
+    List<Relationship> relationships = ViewBag.Relationship;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>@(profile.FirstName + " " + profile.LastName)</td>
+                <td><a href="About.cshtml">Edit</a></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td>@(profile.DateOfBirth.Day + "-" + profile.DateOfBirth.Month + "-" +profile.DateOfBirth.Year)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>@profile.Gender</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Religion:</td>
+                @if (profile.Religion != "")
+            {
+                <td>@profile.Religion</td>
+                <td><a href="About.cshtml">Edit</a></td>
+                }
+            else
+            {
+                <td><a></a></td>
+                <td><a href="About.cshtml">add religion</a></td>
+                }
+
+            </tr>
+            <tr>
+                <td>Relationship:</td>
+                <td>
+                    <select name="RelationshipId">
+                        @if (relationships != null)
+                        {
+                            foreach (Relationship relationship in relationships)
+                            {
+                                <option value="@relationship.Id">@relationship.RelationshipName</option>
+                            }
+                        }
+                    </select>
+                </td>
+                <td><a href="About.cshtml">Edit</a></td>
+                
+            
+
+            </tr>
+            <tr>
+                <td>About:</td>
+                @if (profile.About != "")
+                {
+                <td>@profile.About</td>
+                <td><a href="About.cshtml">Edit</a></td>
+                }
+            else
+            {
+                <td></td>
+                <td><a href="About.cshtml">add something about you</a></td>
+                }
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>
