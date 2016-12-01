@@ -19,9 +19,9 @@ namespace BitBookMVCApp.Core.DAL
         {
             var connection = new SqlConnection(connectionString);
 
-            var query = "INSERT INTO Users(Email, Password) VALUES(@Email, @Password)";
+            var query = "SP_InsertUser";
             
-            var command = new SqlCommand(query, connection);
+            var command = new SqlCommand(query, connection){CommandType = CommandType.StoredProcedure};
 
             command.Parameters.Clear();
 
@@ -32,9 +32,9 @@ namespace BitBookMVCApp.Core.DAL
             command.Parameters["@Password"].Value = user.Password;
 
             connection.Open();
-            var rowsAffected = command.ExecuteNonQuery();
+            var userId = Convert.ToInt32(command.ExecuteScalar());
             connection.Close();
-            return rowsAffected;
+            return userId;
         }
 
         public User GetUserById(int id)
@@ -69,8 +69,12 @@ namespace BitBookMVCApp.Core.DAL
             var connection = new SqlConnection(connectionString);
 
             User user = null;
-            var qrey = "SELECT * FROM Users WHERE Email='" + email + "'";
+            var qrey = "SELECT * FROM Users WHERE Email=@Email";
             var command = new SqlCommand(qrey, connection);
+            command.Parameters.Clear();
+
+            command.Parameters.Add("@Email", SqlDbType.VarChar);
+            command.Parameters["@Email"].Value = email;
             connection.Open();
             var reader = command.ExecuteReader();
 
