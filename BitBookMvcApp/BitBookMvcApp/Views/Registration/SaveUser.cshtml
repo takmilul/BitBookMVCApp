@@ -1,4 +1,4 @@
-﻿@model BitBookMVCApp.ViewModels.Registration.RegistrationAndLogin
+﻿@model BitBookMvcApp.ViewModels.Registration.RegistrationAndLogin
 @{
     Layout = null;
     string message = ViewBag.Message;
@@ -12,7 +12,7 @@
     <title>SaveUser</title>
 </head>
 <body>
-    @if ((string) Session["Message"] != null)
+    @if (((string) Session["Message"]) != null)
 {
     <h5>@((string) Session["Message"])</h5>
     }
@@ -22,11 +22,11 @@
         <p>
             @Html.LabelFor(a => a.Login.EmailForLogin)
             @Html.TextBoxFor(a => a.Login.EmailForLogin)
-            @Html.ValidationMessageFor(a => a.Login.EmailForLogin)&nbsp; &nbsp;
+            @Html.ValidationMessageFor(a => a.Login.EmailForLogin)
 
             @Html.LabelFor(a => a.Login.PasswordForLogin)
             @Html.PasswordFor(a => a.Login.PasswordForLogin)
-            @Html.ValidationMessageFor(a => a.Login.PasswordForLogin)&nbsp; &nbsp;
+            @Html.ValidationMessageFor(a => a.Login.PasswordForLogin)
 
             <input type="submit" class="btn-default" value="Login">
         </p>
@@ -100,7 +100,7 @@
 
 
     <script type="text/javascript">
-        $(document)
+        /*$(document)
             .ready(function (e) {
                 $(function () {
                     $('.signupButton')
@@ -108,7 +108,7 @@
                             $('.signupTable input[type="text"]').val('');
                         });
                 });
-            });
+            });*/
 
 
     </script>

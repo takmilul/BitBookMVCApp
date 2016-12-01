@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using BitBookMvcApp.Core.DAL;
-using BitBookMVCApp.Models;
+using BitBookMvcApp.Models;
 
 namespace BitBookMvcApp.Core.BLL
 {

@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace BitBookMVCApp.ViewModels.Registration
+namespace BitBookMvcApp.ViewModels.Registration
 {
     public class Registration
     {

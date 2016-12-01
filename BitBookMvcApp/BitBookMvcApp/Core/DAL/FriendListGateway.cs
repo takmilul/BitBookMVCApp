@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using BitBookMvcApp.Models;
-using BitBookMVCApp.Models;
 
 namespace BitBookMvcApp.Core.DAL
 {

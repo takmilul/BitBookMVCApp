@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BitBookMVCApp.Core.DAL;
-using BitBookMVCApp.Models;
+using BitBookMvcApp.Core.DAL;
+using BitBookMvcApp.Models;
 
-namespace BitBookMVCApp.Core.BLL
+namespace BitBookMvcApp.Core.BLL
 {
     public class ProfileManager
     {

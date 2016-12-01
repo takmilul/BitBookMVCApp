@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BitBookMVCApp.ViewModels.Registration
+namespace BitBookMvcApp.ViewModels.Registration
 {
     public class Login
     {

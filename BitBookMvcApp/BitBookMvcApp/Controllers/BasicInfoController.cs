@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BitBookMVCApp.Core.BLL;
-using BitBookMVCApp.Models;
-namespace BitBookMVCApp.Controllers
+using BitBookMvcApp.Core.BLL;
+using BitBookMvcApp.Models;
+namespace BitBookMvcApp.Controllers
 {
     public class BasicInfoController : Controller
     {

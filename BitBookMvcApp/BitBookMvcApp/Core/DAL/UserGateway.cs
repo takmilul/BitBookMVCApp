@@ -5,10 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
-using BitBookMVCApp.Models;
-using BitBookMVCApp.ViewModels.Registration;
+using BitBookMvcApp.Models;
 
-namespace BitBookMVCApp.Core.DAL
+namespace BitBookMvcApp.Core.DAL
 {
     public class UserGateway
     {

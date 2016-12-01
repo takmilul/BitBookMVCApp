@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BitBookMVCApp.Core.DAL;
-using BitBookMVCApp.Models;
-using BitBookMVCApp.ViewModels;
-using BitBookMVCApp.ViewModels.Registration;
+using BitBookMvcApp.Core.BLL;
+using BitBookMvcApp.Models;
+using BitBookMvcApp.ViewModels.Registration;
 
-namespace BitBookMVCApp.Core.BLL
+namespace BitBookMvcApp.Core.BLL
 {
     public class RegistrationManager
     {
