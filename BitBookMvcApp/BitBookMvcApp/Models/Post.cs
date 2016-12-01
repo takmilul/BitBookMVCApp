@@ -9,6 +9,7 @@ namespace BitBookMVCApp.Models
     {
         public int Id { get; set; }
         public string UsersPost { get; set; }
+        public string PicUrl { get; set; }
         public bool isText { get; set; }
         public bool isPic { get; set; }
         public DateTime Date { get; set; }

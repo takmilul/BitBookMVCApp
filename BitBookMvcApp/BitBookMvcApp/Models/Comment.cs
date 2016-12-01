@@ -8,8 +8,9 @@ namespace BitBookMVCApp.Models
     public class Comment
     {
         public int Id { get; set; }
+        public string AComment { get; set; }
         public int PostId { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Time { get; set; }
         public int WhoCommentedId { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using BitBookMVCApp.Core.BLL;
 using BitBookMVCApp.Models;
 namespace BitBookMVCApp.Controllers
 {
-    public class ProfileController : Controller
+    public class BasicInfoController : Controller
     {
         ProfileManager _profileManager = new ProfileManager();
         public ActionResult About()
@@ -29,6 +29,18 @@ namespace BitBookMVCApp.Controllers
                 new Relationship{Id = 2, RelationshipName = "In an open relationship"},
                 new Relationship{Id = 3, RelationshipName = "It's complicated"},
             };
+        }
+
+        public RedirectResult EditName()
+        {
+            Session["EditName"] = "not null";
+            return Redirect("/BasicInfo/About");
+        }
+
+        public RedirectToRouteResult UpdateName()
+        {
+            Session["EditName"] = null;
+            return RedirectToAction("About", "BasicInfo");
         }
     }
 }

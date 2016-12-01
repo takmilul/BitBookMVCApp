@@ -10,6 +10,7 @@ namespace BitBookMVCApp.Models
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; }
         public int ProPicId { get; set; }
@@ -30,11 +31,12 @@ namespace BitBookMVCApp.Models
 
         }
 
-        public Profile(int id, string firstName, string lastName, DateTime dateOfBirth, string gender, int proPicId, int coverPicId, string religion, bool hasRelationship, string relationship, int relationshipWithId, string about, DateTime createDate, int userId)
+        public Profile(int id, string firstName, string lastName, string fullName, DateTime dateOfBirth, string gender, int proPicId, int coverPicId, string religion, bool hasRelationship, string relationship, int relationshipWithId, string about, DateTime createDate, int userId)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
+            FullName = fullName;
             DateOfBirth = dateOfBirth;
             Gender = gender;
             ProPicId = proPicId;

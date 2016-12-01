@@ -4,6 +4,8 @@
     Layout = null;
     Profile profile = ViewBag.Profile;
     List<Relationship> relationships = ViewBag.Relationship;
+    
+    string isNameEdited = (string) Session["EditName"];
 }
 
 <!DOCTYPE html>
@@ -18,8 +20,17 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td>@(profile.FirstName + " " + profile.LastName)</td>
-                <td><a href="About.cshtml">Edit</a></td>
+                
+                    @if (isNameEdited != null)
+                    {
+                        <td><input type="text" name="Name" value="@(profile.FirstName + " " + profile.LastName)"/></td>
+                        <td><input id="Save" type="button" value="Done" onclick="location.href='@Url.Action("UpdateName", "BasicInfo")'" /></td>
+                    }
+                    else
+                    {
+                        <td><label>@(profile.FirstName + " " + profile.LastName)</label></td>
+                        <td><a href="@Url.Action("EditName", "BasicInfo")">Edit</a></td>
+                    }
             </tr>
             <tr>
                 <td>Birthday:</td>

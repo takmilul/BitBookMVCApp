@@ -10,9 +10,19 @@ namespace BitBookMVCApp.Core.BLL
     public class ProfileManager
     {
         ProfileGateway _profileGateway = new ProfileGateway();
+
+        public int InsertProfile(Profile profile)
+        {
+            return _profileGateway.InsertProfile(profile);
+        }
         public Profile GetProfileByUserId(int userId)
         {
             return _profileGateway.GetProfileByUserId(userId);
+        }
+
+        public List<Profile> GetProfileListByName(string name)
+        {
+            return _profileGateway.GetProfileListByName(name);
         }
 
         public int UpdateName(int userId, string firstName, string lastName)
@@ -44,5 +54,6 @@ namespace BitBookMVCApp.Core.BLL
         {
             return _profileGateway.UpdateAbout(userId, about);
         }
+
     }
 }

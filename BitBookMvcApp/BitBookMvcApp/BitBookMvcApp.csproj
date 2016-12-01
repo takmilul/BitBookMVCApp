@@ -107,22 +107,31 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
     <Content Include="Views\NewsFeed\Index.cshtml" />
-    <Content Include="Views\Profile\About.cshtml" />
+    <Content Include="Views\BasicInfo\About.cshtml" />
     <Content Include="Views\Registration\SaveUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\NewsFeedController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\BasicInfoController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Core\BLL\CommentManager.cs" />
+    <Compile Include="Core\BLL\FriendListManager.cs" />
+    <Compile Include="Core\BLL\FriendRequestManager.cs" />
+    <Compile Include="Core\BLL\LikeManager.cs" />
     <Compile Include="Core\BLL\LoginManager.cs" />
+    <Compile Include="Core\BLL\PostManager.cs" />
     <Compile Include="Core\BLL\ProfileManager.cs" />
     <Compile Include="Core\BLL\RegistrationManager.cs" />
     <Compile Include="Core\BLL\UserManager.cs" />
+    <Compile Include="Core\DAL\CommentGateway.cs" />
+    <Compile Include="Core\DAL\FriendListGateway.cs" />
+    <Compile Include="Core\DAL\LikeGateway.cs" />
     <Compile Include="Core\DAL\LoginGateway.cs" />
+    <Compile Include="Core\DAL\PostGateway.cs" />
     <Compile Include="Core\DAL\ProfileGateway.cs" />
-    <Compile Include="Core\DAL\RegistrationGateway.cs" />
+    <Compile Include="Core\DAL\FriendRequestGateway.cs" />
     <Compile Include="Core\DAL\UserGateway.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,6 +141,7 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\FamilyMember.cs" />
     <Compile Include="Models\FriendList.cs" />
+    <Compile Include="Models\FriendRequest.cs" />
     <Compile Include="Models\Interest.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\MobileNo.cs" />
