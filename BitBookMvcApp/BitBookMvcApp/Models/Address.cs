@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BitBookMVCApp.Models
+namespace BitBookMvcApp.Models
 {
     public class Address
     {
