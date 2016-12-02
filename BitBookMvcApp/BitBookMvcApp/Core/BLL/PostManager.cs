@@ -15,9 +15,9 @@ namespace BitBookMvcApp.Core.BLL
             return _postGateway.AddPost(post);
         }
 
-        public int RemovePost(Post post)
+        public int RemovePost(int postId)
         {
-            return _postGateway.RemovePost(post);
+            return _postGateway.RemovePost(postId);
         }
     }
 }

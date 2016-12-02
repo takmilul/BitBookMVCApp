@@ -116,6 +116,7 @@
     <Compile Include="Controllers\NewsFeedController.cs" />
     <Compile Include="Controllers\BasicInfoController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Core\BLL\BasicInfoManager.cs" />
     <Compile Include="Core\BLL\CommentManager.cs" />
     <Compile Include="Core\BLL\FriendListManager.cs" />
     <Compile Include="Core\BLL\FriendRequestManager.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Core\BLL\ProfileManager.cs" />
     <Compile Include="Core\BLL\RegistrationManager.cs" />
     <Compile Include="Core\BLL\UserManager.cs" />
+    <Compile Include="Core\DAL\BasicInfoGateway.cs" />
     <Compile Include="Core\DAL\CommentGateway.cs" />
     <Compile Include="Core\DAL\FriendListGateway.cs" />
     <Compile Include="Core\DAL\LikeGateway.cs" />
@@ -146,10 +148,11 @@
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\MobileNo.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\ProfessionalSkills.cs" />
+    <Compile Include="Models\ProfessionalSkill.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Work.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Registration\Login.cs" />
     <Compile Include="ViewModels\Registration\Registration.cs" />

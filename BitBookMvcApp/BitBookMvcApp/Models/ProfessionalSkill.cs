@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BitBookMvcApp.Models
 {
-    public class ProfessionalSkills
+    public class ProfessionalSkill
     {
         public int Id { get; set; }
         public string Skill { get; set; }
