@@ -55,8 +55,8 @@ namespace BitBookMvcApp.Core.DAL
         public Post GetPost(int postId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Post WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Post WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = postId;
@@ -84,8 +84,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<Post> GetAllPosts(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Post WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Post WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;

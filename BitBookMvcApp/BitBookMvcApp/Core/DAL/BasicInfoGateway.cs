@@ -61,8 +61,8 @@ namespace BitBookMvcApp.Core.DAL
         public Address GetAddress(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Address WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Address WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -137,8 +137,8 @@ namespace BitBookMvcApp.Core.DAL
         public Education GetEducation(int educationId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Education WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Education WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = educationId;
@@ -166,8 +166,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<Education> GetAllEducations(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Education WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Education WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -266,8 +266,8 @@ namespace BitBookMvcApp.Core.DAL
         public Work GetWork(int workId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Work WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Work WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = workId;
@@ -297,8 +297,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<Work> GetAllWork(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Work WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Work WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -375,8 +375,8 @@ namespace BitBookMvcApp.Core.DAL
         public MobileNo GetMobileNo(int mobileNoId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM MobileNo WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM MobileNo WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = mobileNoId;
@@ -400,8 +400,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<MobileNo> GetAllMobileNo(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM MobileNo WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM MobileNo WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -472,8 +472,8 @@ namespace BitBookMvcApp.Core.DAL
         public ProfessionalSkill GetProfessionalSkill(int professionalSkillId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM ProfessionalSkills WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM ProfessionalSkills WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = professionalSkillId;
@@ -497,8 +497,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<ProfessionalSkill> GetAllProfessionalSkills(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM ProfessionalSkills WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM ProfessionalSkills WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -569,8 +569,8 @@ namespace BitBookMvcApp.Core.DAL
         public Interest GetInterest(int interestId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Interest WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Interest WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = interestId;
@@ -594,8 +594,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<Interest> GetAllInterests(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM Interest WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Interest WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;
@@ -670,8 +670,8 @@ namespace BitBookMvcApp.Core.DAL
         public FamilyMember GetFamilyMember(int familyMemberId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM FamilyMember WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM FamilyMember WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = familyMemberId;
@@ -696,8 +696,8 @@ namespace BitBookMvcApp.Core.DAL
         public List<FamilyMember> GetAllFamilyMembers(int userId)
         {
             var connection = new SqlConnection(connectionString);
-            var qrey = "SELECT * FROM FamilyMember WHERE UserId=@UserId";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM FamilyMember WHERE UserId=@UserId";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@UserId", SqlDbType.Int);
             command.Parameters["@UserId"].Value = userId;

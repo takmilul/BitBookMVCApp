@@ -41,8 +41,8 @@ namespace BitBookMvcApp.Core.DAL
             var connection = new SqlConnection(connectionString);
 
             User user = null;
-            var qrey = "SELECT * FROM Users WHERE Id=@Id";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Users WHERE Id=@Id";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = id;
@@ -68,8 +68,8 @@ namespace BitBookMvcApp.Core.DAL
             var connection = new SqlConnection(connectionString);
 
             User user = null;
-            var qrey = "SELECT * FROM Users WHERE Email=@Email";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Users WHERE Email=@Email";
+            var command = new SqlCommand(query, connection);
             command.Parameters.Clear();
 
             command.Parameters.Add("@Email", SqlDbType.VarChar);
@@ -96,8 +96,8 @@ namespace BitBookMvcApp.Core.DAL
             var connection = new SqlConnection(connectionString);
 
             List<User> userList = null;
-            var qrey = "SELECT * FROM Users";
-            var command = new SqlCommand(qrey, connection);
+            var query = "SELECT * FROM Users";
+            var command = new SqlCommand(query, connection);
             connection.Open();
             var reader = command.ExecuteReader();
 
@@ -121,10 +121,8 @@ namespace BitBookMvcApp.Core.DAL
         public int ChangePassword(string newPassword, int userId)
         {
             var connection = new SqlConnection(connectionString);
-
             var query = "UPDATE Users SET Password=@Password WHERE Id=@Id";
             var command = new SqlCommand(query, connection);
-
             command.Parameters.Clear();
             command.Parameters.Add("@Id", SqlDbType.Int);
             command.Parameters["@Id"].Value = userId;

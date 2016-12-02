@@ -66,7 +66,6 @@ namespace BitBookMvcApp.Core.DAL
                     FriendName = Convert.ToString(reader["FullName"]),
                     ProPicUrl = Convert.ToString(reader["PicUrl"])
                 };
-
                 friendLists.Add(friendList);
             }
             connection.Close();
